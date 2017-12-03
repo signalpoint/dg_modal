@@ -27,8 +27,7 @@ If you're *not* using the `dg_dialogs` module, then you can use `dg.alert()` for
 
 ``` 
 var msg = dg.t('Everything is OK.'); 
-dg.alert(msg)
-```
+dg.alert(msg);
 ```
 
 ### Direct usage
@@ -38,14 +37,14 @@ use the `dg_modal.alert()`:
 
 ```
 var msg = dg.t('Everything is OK.'); 
-dg.alert(msg)
+dg_modal.alert(msg);
 ```
 
 ## Options
 
 Use `type` to specify what kind of modal will be shown:
 
-### `type`
+### type
 
 - `status` (default)
 - `warning`
@@ -58,7 +57,7 @@ dg.alert(msg, {
 });
 ```
 
-### `title`
+### title
 
 Use the `title` to set the text that appears in the header:
 
@@ -69,7 +68,7 @@ dg.alert(msg, {
 });
 ```
 
-### `alertCallback`
+### alertCallback
 
 Use the `alertCallback` to do something after the user closes the dialog:
 
@@ -85,7 +84,7 @@ dg.alert(msg, {
 });
 ```
 
-### `buttonName`
+### buttonName
 
 Use `buttonName` to specify the text shown on the button in the footer of the modal.
 
