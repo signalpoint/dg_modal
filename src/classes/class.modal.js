@@ -24,7 +24,8 @@ DgModal.prototype.open = function() {
 
 DgModal.prototype.close = function() {
   this.getBlock().style.display = 'none';
-  this.getAlertCallback()();
+  var callback = this.getAlertCallback();
+  callback ? callback() : null;
 };
 
 /**
