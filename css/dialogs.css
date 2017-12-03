@@ -1,0 +1,80 @@
+/* Modal Header */
+.modal-header {
+    background-color: #5cb85c;
+    color: white;
+}
+.modal-header h2 {
+    margin: 0;
+    padding-top: 0.4em;
+}
+.modal-wrapper.warning .modal-header h2 {
+    color: black;
+}
+
+/* Modal Content */
+.modal-content {
+    padding: 8px 16px;
+    color: black;
+}
+
+/* Modal Footer */
+.modal-wrapper .modal-footer {
+    background-color: #5cb85c;
+    color: white;
+    text-align: left;
+}
+.modal-wrapper .modal-footer button {
+    border: 1px solid #1c1c1c;
+}
+
+/* Modal Status Types */
+.modal-wrapper.warning .modal-header,
+.modal-wrapper.warning .modal-footer {
+    background-color: #ed5;
+}
+.modal-wrapper.error .modal-header,
+.modal-wrapper.error .modal-footer {
+    background-color: #ed541d;
+}
+
+/* Modal Wrapper */
+.modal-wrapper {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: dg_modal_top;
+    -webkit-animation-duration: 0.4s;
+    animation-name: dg_modal_top;
+    animation-duration: 0.4s
+}
+
+/* The Close Button */
+.modal-close {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 1px 1px #1c1c1c;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Add Animation */
+@-webkit-keyframes dg_modal_top {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+@keyframes dg_modal_top {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
