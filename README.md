@@ -33,11 +33,11 @@ dg.alert(msg);
 ### Direct usage
 
 Id you are using `dg_dialogs` module, then `dg_modal` does not set up a proxy for `dg.alert()`, so instead you have to
-use the `dg_modal.alert()`:
+use the `dg.modal()`:
 
 ```
 var msg = dg.t('Everything is OK.'); 
-dg_modal.alert(msg);
+dg.modal(msg);
 ```
 
 ## Options
