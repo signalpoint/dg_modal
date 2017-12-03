@@ -62,7 +62,7 @@ dg.alert(msg, {
 Use the `title` to set the text that appears in the header:
 
 ```
-var msg = dg.t('Do you want one??'); 
+var msg = dg.t('Do you want one?'); 
 dg.alert(msg, {
   title: dg.t('Bitcoin')
 });
