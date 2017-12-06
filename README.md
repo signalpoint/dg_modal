@@ -94,3 +94,15 @@ dg.alert(msg, {
   buttonName: dg.t('Continue')
 });
 ```
+
+## Examples
+
+### Load a form in a modal
+```
+var element = {};
+element.controls = {
+  _theme: 'form',
+  _id: 'MyCustomForm'
+};
+dg.modal(element);
+```
