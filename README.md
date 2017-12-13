@@ -42,11 +42,12 @@ dg.modal(msg);
 
 ## Options
 
-Use `type` to specify what kind of modal will be shown:
-
 ### type
 
-- `status` (default)
+Use `type` to specify what kind of modal will be shown:
+
+- `default`
+- `status`
 - `warning`
 - `error`
 

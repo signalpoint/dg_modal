@@ -8,11 +8,12 @@
 dg_modal.alert = function(content, options) {
   if (!options) { options = {}; }
 
-  // What type of modal do we have? status, warning or error
-  var type = options.type ? options.type : 'status';
+  // What type of modal do we have? default, status, warning or error
+  var type = options.type ? options.type : 'default';
 
   // Set up a header title depending on the type of alert.
   var titleMap = {
+    default: 'Alert',
     status: 'Status',
     warning: 'Warning',
     error: 'Error'

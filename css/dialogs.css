@@ -1,26 +1,28 @@
 /* Modal Header */
 .modal-header {
-    background-color: #5cb85c;
-    color: white;
+    background-color: #c1c1c1;
+    color: black;
 }
 .modal-header h2 {
     margin: 0;
     padding-top: 0.4em;
 }
+
+.modal-wrapper.default .modal-header h2,
 .modal-wrapper.warning .modal-header h2 {
     color: black;
 }
 
 /* Modal Content */
 .modal-content {
-    padding: 8px 16px;
+    padding: 1em;
     color: black;
 }
 
 /* Modal Footer */
 .modal-wrapper .modal-footer {
-    background-color: #5cb85c;
-    color: white;
+    background-color: #c1c1c1;
+    color: black;
     text-align: left;
 }
 .modal-wrapper .modal-footer button {
@@ -28,13 +30,20 @@
 }
 
 /* Modal Status Types */
+.modal-wrapper.status .modal-header,
+.modal-wrapper.status .modal-footer {
+    background-color: #5cb85c;
+    color: white;
+}
 .modal-wrapper.warning .modal-header,
 .modal-wrapper.warning .modal-footer {
     background-color: #ed5;
+    color: white;
 }
 .modal-wrapper.error .modal-header,
 .modal-wrapper.error .modal-footer {
     background-color: #ed541d;
+    color: white;
 }
 
 /* Modal Wrapper */
