@@ -19,11 +19,11 @@ DgModal.prototype.isOpen = function() {
   return this.getBlock().style.display == 'block';
 };
 DgModal.prototype.open = function() {
-  this.getBlock().style.display = 'block';
+  dg.show(this.getBlock());
 };
 
 DgModal.prototype.close = function() {
-  this.getBlock().style.display = 'none';
+  dg.hide(this.getBlock());
   var callback = this.getAlertCallback();
   callback ? callback() : null;
 };
