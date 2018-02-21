@@ -99,6 +99,7 @@ dg.alert(msg, {
 ## Examples
 
 ### Load a form in a modal
+
 ```
 var element = {};
 element.controls = {
@@ -106,4 +107,10 @@ element.controls = {
   _id: 'MyCustomForm'
 };
 dg.modal(element);
+```
+
+### Programmatically close modal
+
+```
+dg_modal.close();
 ```
