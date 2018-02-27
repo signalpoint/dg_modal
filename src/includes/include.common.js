@@ -23,6 +23,14 @@ dg_modal.load = function() {
 };
 
 /**
+ * Returns true if the modal is open, false otherwise.
+ */
+dg_modal.isOpen = function() {
+  return dg_modal.load().isOpen();
+};
+
+
+/**
  * Closes the modal.
  */
 dg_modal.close = function() {

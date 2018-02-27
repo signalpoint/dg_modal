@@ -114,3 +114,11 @@ dg.modal(element);
 ```
 dg_modal.close();
 ```
+
+### Check if modal is open
+
+```
+if (dg_modal.isOpen()) {
+  // Do stuff...
+}
+```
