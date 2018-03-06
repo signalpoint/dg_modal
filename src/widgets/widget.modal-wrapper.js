@@ -2,12 +2,10 @@ dg.theme_modal_wrapper = function(variables) {
   variables._attributes.class.push('modal-wrapper');
   var html = '<div ' + dg.attrs(variables) + '>';
 
-  if (variables._header) {
-    html += dg.render({
-      _theme: 'modal_header',
-      _title: variables._header
-    });
-  }
+  html += dg.render({
+    _theme: 'modal_header',
+    _title: variables._title
+  });
 
   if (variables._content) {
     html += dg.render({
