@@ -22,7 +22,7 @@ dg_modal.alert = function(content, options) {
 
   // Process any incoming options.
   var alertCallback = options.alertCallback ? options.alertCallback : null;
-  if (options.title) { title = options.title; }
+  if (options.title !== 'undefined') { title = options.title; }
   var buttonName = options.buttonName ? options.buttonName : dg.t('OK');
 
   // Load up the modal, set it's alert callback and content, then open it.
@@ -30,7 +30,7 @@ dg_modal.alert = function(content, options) {
   modal.setAlertCallback(alertCallback);
   modal.setContent({
     _attributes: { class: [type] },
-    _header: title,
+    _title: title,
     _content: content,
     _footer: buttonName // @TODO, this should support an array of buttons, 1, 2, 3, etc.
   });
