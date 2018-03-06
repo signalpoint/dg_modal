@@ -53,18 +53,18 @@ Use `type` to specify what kind of modal will be shown:
 
 ```
 var msg = dg.t('The robots are coming.'); 
-dg.alert(msg, {
+dg.modal(msg, {
   type: 'warning'
 });
 ```
 
 ### title
 
-Use the `title` to set the text that appears in the header:
+Use the `title` to set the text that appears in the header, or `null` to use no text:
 
 ```
 var msg = dg.t('Do you want one?'); 
-dg.alert(msg, {
+dg.modal(msg, {
   title: dg.t('Bitcoin')
 });
 ```
@@ -75,7 +75,7 @@ Use the `alertCallback` to do something after the user closes the dialog:
 
 ```
 var msg = dg.t('Sarcasm detector disabled.');
-dg.alert(msg, {
+dg.modal(msg, {
   type: 'error',
   alertCallback: function(button) {
   
@@ -91,7 +91,7 @@ Use `buttonName` to specify the text shown on the button in the footer of the mo
 
 ```
 var msg = dg.t('Something amazing happened.');
-dg.alert(msg, {
+dg.modal(msg, {
   buttonName: dg.t('Continue')
 });
 ```
