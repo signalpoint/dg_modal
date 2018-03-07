@@ -42,6 +42,18 @@ dg.alert(msg);
 
 ## Options
 
+## id
+
+Use a unique `id` if you'd need to be able to open multiple modal at once. It defaults to `modal` if one wasn't
+provided.
+
+```
+var msg = dg.t('I am a human, not an id number!');
+dg.modal(msg, {
+  id: 'my-custom-id'
+});
+```
+
 ### type
 
 Use `type` to specify what kind of modal will be shown:
@@ -101,11 +113,12 @@ dg.modal(msg, {
 
 ### _attributes
 
-Use `_attributes` to specify any custom attributes you'd like added to the modal wrapper:
+Use `_attributes` to specify any custom attributes you'd like added to the modal div.
 
 ```
 var msg = dg.t('Look at my hot attributes.');
 dg.modal(msg, {
+  id: 'my-custom-id',
   buttonName: dg.t('Continue'),
   _attributes: {
     class: ['foo', 'bar'],
@@ -113,6 +126,9 @@ dg.modal(msg, {
   }
 });
 ```
+
+You *must* use a unique `id` for this to work, it will not work with the default `modal` id. If you need to modify the
+attributes on the `modal` block, use `hook_blocks_build_alter()` instead.
 
 ## Examples
 
@@ -130,13 +146,17 @@ dg.modal(element);
 ### Programmatically close modal
 
 ```
-dg_modal.close();
+dg_modal.close(); // Closes all modals.
+dg_modal.close('my-custom-modal'); // Close a certain modal.
 ```
 
 ### Check if modal is open
 
 ```
 if (dg_modal.isOpen()) {
-  // Do stuff...
+  // At least one modal is open.
+}
+else if (dg_modal.isOpen('my-custom-modal')) {
+  // My custom modal is open.
 }
 ```

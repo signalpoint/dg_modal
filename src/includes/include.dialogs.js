@@ -10,10 +10,10 @@ dg_modal.alert = function(content, options) {
   if (!options) { options = {}; }
   dg.attributesInit(options);
   var attrs = options._attributes;
+  if (!dg.inArray('modal', attrs.class)) { attrs.class.push('modal'); }
 
   // What type of modal do we have? default, status, warning or error
   var type = options.type ? options.type : 'default';
-  attrs.class.push(type);
 
   // Set up a header title depending on the type of alert.
   var titleMap = {
@@ -30,16 +30,17 @@ dg_modal.alert = function(content, options) {
   var buttonName = options.buttonName ? options.buttonName : dg.t('OK');
 
   // Load up the modal, set it's alert callback and content, then open it.
-  var modal = dg_modal.load();
+  var modal = options.id ? dg_modal.load(options.id) : dg_modal.load();
+  modal.setAttributes(attrs);
   modal.setAlertCallback(alertCallback);
   modal.setContent({
-    _attributes: attrs,
+    _modal: modal,
+    _attributes: { class: [type] },
     _title: title,
     _content: content,
     _footer: buttonName // @TODO, this should support an array of buttons, 1, 2, 3, etc.
   });
   modal.open();
-
 };
 
 // Make a helper proxy function called dg.modal() so developers don't have to type dg_modal.alert().
@@ -54,7 +55,6 @@ if (!dg.alert) { dg.alert = dg_modal.alert; }
 dg_modal.confirm = function(message, options) {
 
   // @TODO this should be a simple proxy to dg_modal.alert(), which should allow for multiple buttons in the footer.
-
 
 };
 
