@@ -58,6 +58,9 @@ dg.modal(msg, {
 });
 ```
 
+You can provide a custom string for `type` if you want, and it will be used as a CSS class name on the wrapper. See the
+ `_attributes` section below for more about custom classes and attributes.
+
 ### title
 
 Use the `title` to set the text that appears in the header, or `null` to use no text:
@@ -93,6 +96,21 @@ Use `buttonName` to specify the text shown on the button in the footer of the mo
 var msg = dg.t('Something amazing happened.');
 dg.modal(msg, {
   buttonName: dg.t('Continue')
+});
+```
+
+### _attributes
+
+Use `_attributes` to specify any custom attributes you'd like added to the modal wrapper:
+
+```
+var msg = dg.t('Look at my hot attributes.');
+dg.modal(msg, {
+  buttonName: dg.t('Continue'),
+  _attributes: {
+    class: ['foo', 'bar'],
+    id: 'my-custom-id'
+  }
 });
 ```
 

@@ -2,14 +2,18 @@
  * @param {*} content
  * @param {Object} options Optional
  *   alertCallback - the function to call after the user presses OK
- *   title - the title to use on the alert box, defaults to 'Alert'
- *   buttonName - the text to place on the button, default to 'OK'
+ *   title - {String} the title to use on the alert box, defaults to 'Alert'
+ *   buttonName - {String} the text to place on the button, default to 'OK'
+ *   _attributes {Object} A dg8 attributes object to be applied to the modal wrapper element.
  */
 dg_modal.alert = function(content, options) {
   if (!options) { options = {}; }
+  dg.attributesInit(options);
+  var attrs = options._attributes;
 
   // What type of modal do we have? default, status, warning or error
   var type = options.type ? options.type : 'default';
+  attrs.class.push(type);
 
   // Set up a header title depending on the type of alert.
   var titleMap = {
@@ -29,7 +33,7 @@ dg_modal.alert = function(content, options) {
   var modal = dg_modal.load();
   modal.setAlertCallback(alertCallback);
   modal.setContent({
-    _attributes: { class: [type] },
+    _attributes: attrs,
     _title: title,
     _content: content,
     _footer: buttonName // @TODO, this should support an array of buttons, 1, 2, 3, etc.
