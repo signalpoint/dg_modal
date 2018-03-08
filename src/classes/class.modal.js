@@ -48,6 +48,7 @@ DgModal.prototype.isOpen = function() {
 DgModal.prototype.open = function() {
   dg.show(this.getBlock());
   dg_modal.stackPush(this.id());
+  jDrupal.moduleInvokeAll('modal_open', this);
 };
 
 DgModal.prototype.close = function() {
@@ -55,6 +56,7 @@ DgModal.prototype.close = function() {
   var callback = this.getAlertCallback();
   callback ? callback() : null;
   dg_modal.stackPop();
+  jDrupal.moduleInvokeAll('modal_close', this);
 };
 
 /**

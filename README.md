@@ -130,6 +130,42 @@ dg.modal(msg, {
 You *must* use a unique `id` for this to work, it will not work with the default `modal` id. If you need to modify the
 attributes on the `modal` block, use `hook_blocks_build_alter()` instead.
 
+## Hooks
+
+```
+/**
+ * Implements hook_modal_open().
+ */
+function cw_app_modal_open(modal) {
+
+  // Do something when our custom modal is opened.
+  if (modal.id() == 'my-custom-modal') {
+    doSomething();
+  }
+
+  // Do something else when any modal is opened.
+  doSomethingElse();
+
+}
+```
+
+```
+/**
+ * Implements hook_modal_close().
+ */
+function cw_app_modal_close(modal) {
+
+  // Do something when our custom modal is closed.
+  if (modal.id() == 'my-custom-modal') {
+    doSomething();
+  }
+
+  // Do something when any modal is closed.
+  doSomethingElse();
+
+}
+```
+
 ## Examples
 
 ### Load a form in a modal
