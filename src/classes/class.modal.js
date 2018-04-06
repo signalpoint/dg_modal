@@ -2,7 +2,7 @@ DgModal = function(id) {
 
   // By default we go for the "modal" block which is always in the DOM. However, if a custom ID is provided we'll create
   // a block on the fly and insert it after the top most modal block as a way to house this new unique modal. This
-  // allows multiple modals to be open at once, and they will keep piling on top of eachother.
+  // allows multiple modals to be open at once, and they will keep piling on top of each other.
   var block = dg.qs('#' + id);
   if (!block) {
     block = document.createElement('div');
@@ -11,7 +11,9 @@ DgModal = function(id) {
     var stack = dg_modal.getStack();
     var idSelector = !stack.length ? 'modal' : stack[stack.length - 1];
     var ref = dg.qs('#' + idSelector);
-    ref.parentNode.insertBefore(block, ref.nextSibling);
+    if (ref && ref.parentNode) {
+      ref.parentNode.insertBefore(block, ref.nextSibling)
+    }
   }
 
   this._id = id;
