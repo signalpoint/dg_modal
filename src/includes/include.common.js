@@ -5,10 +5,8 @@
 dg_modal.load = function(id) {
   if (!id) { id = 'modal'; }
 
-  // If the modal has already been loaded, use it.
-  // @TODO this doesn't work, it prevents a modal from being loaded a second time.
-  //var loaded = !! dg._modal;
-  //if (loaded) { return dg._modal; }
+  // If the modal already exists, return it.
+  if (dg._modals[id]) { return dg._modals[id]; }
 
   // Instantiate the modal object and set it aside.
   var modal = new DgModal(id);
