@@ -21,4 +21,10 @@ function dg_modal_post_process_route_change(route, newPath, oldPath) {
       dg_modal.delete(id);
     }
   }
+  // Clear out any stragglers that aren't on the stack.
+  var modals = dg._modals;
+  for (var id in modals) {
+    if (!modals.hasOwnProperty(id)) { continue; }
+    dg_modal.delete(id);
+  }
 }
