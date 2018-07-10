@@ -28,7 +28,11 @@ dg_modal.loadRecent = function() {
 
 dg_modal.delete = function(id) {
   if (id == 'modal') { return; } // We won't remove the default block.
-  if (dg._modals[id]) { delete dg._modals[id]; }
+  if (dg._modals[id]) {
+    delete dg._modals[id];
+    var modalEl = dg.qs('#' + id);
+    if (modalEl) { modalEl.parentNode.removeChild(modalEl); }
+  }
 };
 
 /**
