@@ -50,7 +50,7 @@ provided.
 ```
 var msg = dg.t('I am a human, not an id number!');
 dg.modal(msg, {
-  id: 'my-custom-id'
+  id: 'my-custom-modal'
 });
 ```
 
@@ -118,11 +118,11 @@ Use `_attributes` to specify any custom attributes you'd like added to the modal
 ```
 var msg = dg.t('Look at my hot attributes.');
 dg.modal(msg, {
-  id: 'my-custom-id',
+  id: 'my-custom-modal',
   buttonName: dg.t('Continue'),
   _attributes: {
     class: ['foo', 'bar'],
-    id: 'my-custom-id'
+    id: 'my-custom-modal'
   }
 });
 ```
@@ -130,13 +130,23 @@ dg.modal(msg, {
 You *must* use a unique `id` for this to work, it will not work with the default `modal` id. If you need to modify the
 attributes on the `modal` block, use `hook_blocks_build_alter()` instead.
 
+### _footer
+
+Set `_footer` to false to not render a footer with the modal:
+
+```
+dg.modal('Hello', {
+  _footer: false,
+});
+```
+
 ## Hooks
 
 ```
 /**
  * Implements hook_modal_open().
  */
-function cw_app_modal_open(modal) {
+function example_modal_open(modal) {
 
   // Do something when our custom modal is opened.
   if (modal.id() == 'my-custom-modal') {
@@ -147,13 +157,11 @@ function cw_app_modal_open(modal) {
   doSomethingElse();
 
 }
-```
 
-```
 /**
  * Implements hook_modal_close().
  */
-function cw_app_modal_close(modal) {
+function example_modal_close(modal) {
 
   // Do something when our custom modal is closed.
   if (modal.id() == 'my-custom-modal') {
@@ -177,6 +185,12 @@ element.controls = {
   _id: 'MyCustomForm'
 };
 dg.modal(element);
+```
+
+### Programmatically open modal
+
+```
+dg_modal.load('my-custom-modal').open();
 ```
 
 ### Programmatically close modal
