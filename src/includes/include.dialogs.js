@@ -26,8 +26,10 @@ dg_modal.alert = function(content, options) {
 
   // Process any incoming options.
   var alertCallback = options.alertCallback ? options.alertCallback : null;
-  if (options.title !== 'undefined') { title = options.title; }
-  var buttonName = options.buttonName ? options.buttonName : dg.t('OK');
+  if (typeof options.title !== 'undefined') { title = options.title; }
+  var buttonName = null;
+  if (typeof options._footer !== 'undefined' && !options._footer) { /* they don't want a footer */ }
+  else { buttonName = options.buttonName ? options.buttonName : dg.t('OK'); }
 
   // Load up the modal, set it's alert callback and content, then open it.
   var modal = options.id ? dg_modal.load(options.id) : dg_modal.load();
