@@ -23,21 +23,9 @@ content: {
 
 ## Usage
 
-If you are using `dg_dialogs` module, then `dg_modal` does not set up a proxy for `dg.alert()`, so instead you have to
-use the `dg.modal()`:
-
 ```
 var msg = dg.t('Everything is OK.'); 
 dg.modal(msg);
-```
-
-### Dialog replacement
-
-If you're *not* using the `dg_dialogs` module, then you can use `dg.alert()` for modals:
-
-```
-var msg = dg.t('Everything is OK.'); 
-dg.alert(msg);
 ```
 
 ## Options
@@ -139,6 +127,17 @@ dg.modal('Hello', {
   _footer: false,
 });
 ```
+
+### Dialog replacement
+
+If you're *not* using the `dg_dialogs` module, then you can use `dg.alert()` for modals:
+
+```
+var msg = dg.t('Everything is OK.');
+dg.alert(msg);
+```
+
+If you are using `dg_dialogs` module, then `dg_modal` will not set up a proxy on `dg.alert()`, and instead you use `dg.modal()`.
 
 ## Hooks
 
