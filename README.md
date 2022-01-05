@@ -23,7 +23,7 @@ content: {
 
 ## Usage
 
-Id you are using `dg_dialogs` module, then `dg_modal` does not set up a proxy for `dg.alert()`, so instead you have to
+If you are using `dg_dialogs` module, then `dg_modal` does not set up a proxy for `dg.alert()`, so instead you have to
 use the `dg.modal()`:
 
 ```
