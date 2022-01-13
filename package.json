@@ -1,6 +1,6 @@
 {
   "name": "dg_modal",
-  "version": "0.0.0",
+  "version": "8.0.0",
   "description": "A module for DrupalGap 8.",
   "main": "dg_modal.min.js",
   "keywords": ["dg_modal"],
